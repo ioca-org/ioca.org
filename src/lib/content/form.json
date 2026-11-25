@@ -1,0 +1,242 @@
+{
+	"startId": "intro",
+	"sections": [
+		{
+			"id": "intro",
+			"title": "IOCA Membership",
+			"description": "The Intercollegiate Outing Club Association was formed in 1932 to serve as a contact between college outing clubs. Today, the association still holds the same purpose: it allows larger clubs with expertise and equipment to help smaller clubs become more active, and helps new clubs get started with sample constitutions, bylaws, and ideas. Our goal now is to revive this community, and we need YOU to help us out! Fill out this form to join or reconnect with IOCA.",
+			"fields": [
+				{
+					"id": "first-name",
+					"label": "First Name",
+					"type": "text",
+					"required": true,
+					"allowOther": false
+				},
+				{
+					"id": "last-name",
+					"label": "Last Name",
+					"type": "text",
+					"required": true,
+					"allowOther": false
+				},
+				{
+					"id": "association",
+					"label": "How are you associated with IOCA?",
+					"type": "select",
+					"required": true,
+					"options": ["College Outing Club", "Outing Club Alumni"],
+					"allowOther": true
+				}
+			],
+			"nav": {
+				"type": "branch",
+				"fieldId": "association",
+				"fallback": "info",
+				"map": [
+					{
+						"value": "College Outing Club",
+						"target": "college-club"
+					},
+					{
+						"value": "Outing Club Alumni",
+						"target": "outing-club-alumni"
+					}
+				]
+			}
+		},
+		{
+			"id": "college-club",
+			"title": "College Outing Club",
+			"fields": [
+				{
+					"id": "member-club-name",
+					"label": "What is the name of your outing club?",
+					"type": "text",
+					"required": true,
+					"hint": "Ex: RIT Outing Club (RITOC)",
+					"allowOther": false
+				},
+				{
+					"id": "member-school",
+					"label": "What school are you from? Please say full name.",
+					"type": "text",
+					"required": true,
+					"hint": "Ex: Rochester Institute of Technology",
+					"allowOther": false
+				},
+				{
+					"id": "member-role",
+					"label": "What is your role in the club?",
+					"type": "text",
+					"required": true,
+					"allowOther": false
+				},
+				{
+					"id": "update-club",
+					"label": "Would you like to update your club's information?",
+					"type": "radio",
+					"required": true,
+					"hint": "Please select no unless you represent the club you are updating",
+					"options": ["No", "Yes"],
+					"allowOther": false
+				}
+			],
+			"nav": {
+				"type": "branch",
+				"fieldId": "update-club",
+				"fallback": "info",
+				"map": [
+					{
+						"value": "Yes",
+						"target": "update-club-info"
+					},
+					{
+						"value": "No",
+						"target": "info"
+					}
+				]
+			}
+		},
+		{
+			"id": "outing-club-alumni",
+			"title": "Outing Club Alumni",
+			"fields": [
+				{
+					"id": "alum-club",
+					"label": "What was the name of your outing club?",
+					"type": "text",
+					"required": true,
+					"hint": "If you were a part of multiple, please list them as so. Ex: Syracuse University Outing Club, Cornell Outing Club",
+					"allowOther": false
+				},
+				{
+					"id": "alum-location",
+					"label": "Where are you currently located?",
+					"type": "text",
+					"required": false,
+					"hint": "If you prefer not to answer please leave this blank.",
+					"allowOther": false
+				}
+			],
+			"nav": {
+				"type": "goto",
+				"to": "info"
+			}
+		},
+		{
+			"id": "update-club-info",
+			"title": "Update Club Information",
+			"description": "Used to update club information on our website and directory. This information is manually reviewed so please don't expect immediate updates.",
+			"fields": [
+				{
+					"id": "club-name",
+					"label": "What is the name of your outing club?",
+					"type": "text",
+					"required": true,
+					"hint": "Ex: RIT Outing Club (RITOC)",
+					"allowOther": false
+				},
+				{
+					"id": "club-college",
+					"label": "What school is your club a part of? Please say full name.",
+					"type": "text",
+					"required": true,
+					"hint": "Ex: Rochester Institute of Technology",
+					"allowOther": false
+				},
+				{
+					"id": "club-location",
+					"label": "Where is your club located?",
+					"type": "text",
+					"required": true,
+					"hint": "Ex: Rochester, NY",
+					"allowOther": false
+				},
+				{
+					"id": "club-role",
+					"label": "What is your role in the club?",
+					"type": "text",
+					"required": true,
+					"allowOther": false
+				},
+				{
+					"id": "club-website",
+					"label": "What is your club's website?",
+					"type": "text",
+					"validation": "url",
+					"required": false,
+					"hint": "If your club does not have one, please leave this blank.",
+					"allowOther": false
+				},
+				{
+					"id": "club-email",
+					"label": "What is your club's email?",
+					"type": "text",
+					"validation": "email",
+					"required": false,
+					"hint": "If your club does not have one, please leave this blank.",
+					"allowOther": false
+				},
+				{
+					"id": "club-instagram",
+					"label": "What is your club's Instagram?",
+					"type": "text",
+					"required": false,
+					"hint": "If your club does not have one, please leave this blank.",
+					"allowOther": false
+				},
+				{
+					"id": "club-facebook",
+					"label": "What is your club's Facebook?",
+					"type": "text",
+					"required": false,
+					"hint": "If your club does not have one, please leave this blank.",
+					"allowOther": false
+				}
+			],
+			"nav": {
+				"type": "goto",
+				"to": "info"
+			}
+		},
+		{
+			"id": "info",
+			"title": "Information",
+			"fields": [
+				{
+					"id": "goals",
+					"label": "What are you hoping to get out of IOCA membership?",
+					"type": "select",
+					"required": true,
+					"options": [
+						"Meeting other outdoor enthusiasts",
+						"Trip resources and planning help",
+						"Gear and equipment sharing",
+						"Mentorship for my club"
+					],
+					"allowOther": true
+				},
+				{
+					"id": "mailing-list-email",
+					"label": "What email would you like on our mailing list?",
+					"type": "text",
+					"validation": "email",
+					"required": false,
+					"hint": "If you don't want to be on our mailing list, please leave this blank.",
+					"allowOther": false
+				},
+				{
+					"id": "questions",
+					"label": "Thoughts or questions?",
+					"type": "textarea",
+					"required": false,
+					"allowOther": false
+				}
+			],
+			"nav": {
+				"type": "end"
+			}
+		}
+	]
+}

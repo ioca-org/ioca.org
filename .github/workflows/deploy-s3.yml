@@ -1,0 +1,77 @@
+name: Deploy site to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      # Editor & IDE configs
+      - '.vscode/**'
+      # Linters & formatters (do not affect build output)
+      - 'eslint.config.js'
+      - '.prettierrc'
+      - '.prettierignore'
+      # Documentation & Git metadata
+      - 'README.md'
+      - 'LICENSE*'
+      - 'docs/**'
+      - '.gitignore'
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production-s3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'pnpm'
+          cache-dependency-path: 'pnpm-lock.yaml'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build SvelteKit site
+        env:
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
+        run: pnpm build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v6.3.0
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Fetch Deployment Target Config from SSM
+        run: |
+          BUCKET=$(aws ssm get-parameter --name "/ioca/site_bucket" --query "Parameter.Value" --output text)
+          echo "::add-mask::$BUCKET"
+          echo "AWS_S3_BUCKET=$BUCKET" >> $GITHUB_ENV
+
+      - name: Deploy to S3
+        env:
+          BUCKET: ${{ env.AWS_S3_BUCKET }}
+        run: |
+          echo "Uploading immutable assets..."
+          aws s3 sync build/_app/immutable s3://$BUCKET/_app/immutable \
+            --cache-control "public,max-age=31536000,immutable"
+
+          echo "Syncing HTML and static files (preserving immutable chunks)..."
+          aws s3 sync build/ s3://$BUCKET \
+            --exclude "_app/immutable/*" \
+            --cache-control "public,max-age=0,must-revalidate" \
+            --delete

@@ -1,0 +1,255 @@
+media:
+  input: static/uploads
+  output: /uploads
+
+content:
+  - name: news
+    label: News Articles
+    type: collection
+    path: src/lib/content/news
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Date
+        type: date
+      - name: category
+        label: Category
+        type: select
+        options:
+          values: [Announcement, Recap, Registry]
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: showOnHomepage
+        label: Show on Homepage
+        type: boolean
+        default: false
+      - name: body
+        label: Content
+        type: rich-text
+
+  - name: events
+    label: Events
+    type: collection
+    path: src/lib/content/events
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Event Title
+        type: string
+      - name: date
+        label: Date / Date Range
+        type: string
+        description: 'e.g., Sep 19–21, 2025'
+      - name: location
+        label: Location
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: host
+        label: Host Outing Club
+        type: string
+      - name: showOnHomepage
+        label: Show on Homepage
+        type: boolean
+        default: false
+      - name: externalLink
+        label: External Link (Optional)
+        type: string
+        description: 'Link to external page for this event'
+      - name: body
+        label: Content
+        type: rich-text
+
+  - name: schools
+    label: Outing Clubs Registry
+    type: file
+    path: src/lib/content/schools.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Club Name
+        type: string
+        description: 'Name of the outing club (e.g. Purdue Outing Club (POC))'
+      - name: institution
+        label: College / University
+        type: string
+        description: 'Affiliated college or university (e.g. Purdue University)'
+      - name: city
+        label: City
+        type: string
+        description: 'City where the club or school is located'
+      - name: country
+        label: Country
+        type: select
+        options:
+          values: [US, CA]
+      - name: subdivision
+        label: State / Province
+        type: string
+      - name: region
+        label: IOCA Region
+        type: select
+        options:
+          values:
+            [
+              Northeast,
+              Midwest,
+              South,
+              West,
+              British Columbia,
+              Prairies,
+              Ontario,
+              Quebec,
+              Atlantic,
+              Territories
+            ]
+      - name: description
+        label: Description (Optional)
+        type: text
+      - name: website
+        label: Website (Optional)
+        type: string
+      - name: instagram
+        label: Instagram Link (Optional)
+        type: string
+      - name: facebook
+        label: Facebook Link (Optional)
+        type: string
+      - name: email
+        label: Contact Email (Optional)
+        type: string
+
+  - name: regions
+    label: Region Contacts
+    type: file
+    path: src/lib/content/regions.json
+    format: json
+    list: true
+    fields:
+      - name: region
+        label: Region Name
+        type: select
+        options:
+          values:
+            [
+              Northeast,
+              Midwest,
+              South,
+              West,
+              British Columbia,
+              Prairies,
+              Ontario,
+              Quebec,
+              Atlantic,
+              Territories
+            ]
+      - name: contact
+        label: Contact Name
+        type: string
+      - name: email
+        label: Contact Email
+        type: string
+
+  - name: membership_form
+    label: Membership Form
+    type: file
+    path: src/lib/content/form.json
+    format: json
+    list: false
+    fields:
+      - name: startId
+        label: Starting Section ID
+        type: string
+        required: true
+      - name: sections
+        label: Form Sections
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Section ID
+            type: string
+            required: true
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+          - name: fields
+            label: Fields
+            type: object
+            list: true
+            fields:
+              - name: id
+                label: Field ID
+                type: string
+                required: true
+              - name: label
+                label: Label
+                type: string
+                required: true
+              - name: type
+                label: Field Type
+                type: select
+                options:
+                  values: [text, textarea, select, radio]
+                required: true
+              - name: validation
+                label: Validation Rule
+                type: select
+                options:
+                  values: [none, email, url, phone]
+              - name: required
+                label: Required
+                type: boolean
+              - name: hint
+                label: Hint text
+                type: string
+              - name: placeholder
+                label: Placeholder text
+                type: string
+              - name: options
+                label: Options (for Select / Radio only)
+                type: string
+                list: true
+              - name: allowOther
+                label: Allow "Other" Option (Select only)
+                type: boolean
+          - name: nav
+            label: Navigation (What happens next?)
+            type: object
+            fields:
+              - name: type
+                label: Navigation Type
+                type: select
+                options:
+                  values: [goto, branch, end]
+                required: true
+              - name: to
+                label: Target Section (if 'goto')
+                type: string
+              - name: fieldId
+                label: Field to base branch on (if 'branch')
+                type: string
+              - name: fallback
+                label: Fallback Section (if 'branch' doesn't match)
+                type: string
+              - name: map
+                label: Branch Routing (if 'branch')
+                type: object
+                list: true
+                fields:
+                  - name: value
+                    label: User's Answer
+                    type: string
+                  - name: target
+                    label: Target Section ID
+                    type: string

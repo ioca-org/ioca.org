@@ -1,0 +1,162 @@
+[
+	{
+		"name": "Arizona Outdoors Club",
+		"institution": "Arizona State University (not directly affiliated)",
+		"city": "Tempe",
+		"country": "US",
+		"subdivision": "Arizona",
+		"region": "West",
+		"website": "https://arizonaoutdoorsclub.com",
+		"instagram": "https://www.instagram.com/asuoutdoorsclub",
+		"email": "officers@arizonaoutdoorsclub.com"
+	},
+	{
+		"name": "Brandeis Mountain Club",
+		"institution": "Brandeis University",
+		"city": "Waltham",
+		"country": "US",
+		"subdivision": "Massachusetts",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/brandeismountain",
+		"email": "mountainclub@brandeis.edu"
+	},
+	{
+		"name": "Cornell Outing Club (COC)",
+		"institution": "Cornell University",
+		"city": "Ithaca",
+		"country": "US",
+		"subdivision": "New York",
+		"region": "Northeast",
+		"website": "https://cornelloutingclub.org",
+		"instagram": "https://www.instagram.com/cornell.outing.club",
+		"facebook": "https://www.facebook.com/CornellOutingClub",
+		"email": "coc-exec-l@list.cornell.edu"
+	},
+	{
+		"name": "Lehigh University Outing Club (LUOC)",
+		"institution": "Lehigh University",
+		"city": "Bethlehem",
+		"country": "US",
+		"subdivision": "Pennsylvania",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/luoutingclub",
+		"email": "inouting@lehigh.edu"
+	},
+	{
+		"name": "Nature and Recreation Society (NRS)",
+		"institution": "Stony Brook University",
+		"city": "Stony Brook",
+		"country": "US",
+		"subdivision": "New York",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/sbu_nrs",
+		"email": "nrsstonybrook@gmail.com"
+	},
+	{
+		"name": "New Hampshire Outing Club (NHOC)",
+		"institution": "University of New Hampshire",
+		"city": "Durham",
+		"country": "US",
+		"subdivision": "New Hampshire",
+		"region": "Northeast",
+		"website": "https://nhoutingclub.wixsite.com/nhoc",
+		"instagram": "https://www.instagram.com/the_nhoc",
+		"email": "thenhoc@gmail.com"
+	},
+	{
+		"name": "Northeastern University Huskiers and Outing Club (NUHOC)",
+		"institution": "Northeastern University",
+		"city": "Boston",
+		"country": "US",
+		"subdivision": "Massachusetts",
+		"region": "Northeast",
+		"website": "https://nuhoc.com",
+		"instagram": "https://www.instagram.com/wegoontrips",
+		"email": "nuhoc.info@gmail.com"
+	},
+	{
+		"name": "Outdoor Club at the University of Oklahoma (OUOC)",
+		"institution": "University of Oklahoma",
+		"city": "Norman",
+		"country": "US",
+		"subdivision": "Oklahoma",
+		"region": "South",
+		"website": "https://www.ououtdoorclub.com",
+		"instagram": "https://www.instagram.com/ou.outdoorclub",
+		"email": "ououtdoorclub83@gmail.com"
+	},
+	{
+		"name": "Purdue Outing Club (POC)",
+		"institution": "Purdue University",
+		"city": "West Lafayette",
+		"country": "US",
+		"subdivision": "Indiana",
+		"region": "Midwest",
+		"website": "https://www.purdueoutingclub.com",
+		"instagram": "https://www.instagram.com/purdue.outing.club",
+		"email": "purdueouting@gmail.com"
+	},
+	{
+		"name": "Rensselaer Outing Club (ROC)",
+		"institution": "Rensselaer Polytechnic Institute",
+		"city": "Troy",
+		"country": "US",
+		"subdivision": "New York",
+		"region": "Northeast",
+		"website": "https://outing.org",
+		"instagram": "https://www.instagram.com/Rensselaer_outing_club",
+		"facebook": "https://www.facebook.com/RPIOutingClub"
+	},
+	{
+		"name": "The Outing Club of Notre Dame",
+		"institution": "The University of Notre Dame",
+		"city": "Notre Dame",
+		"country": "US",
+		"subdivision": "Indiana",
+		"region": "Midwest",
+		"website": "https://nd.campuslabs.com/engage/organization/ocnd",
+		"instagram": "https://www.instagram.com/Outingclubnd"
+	},
+	{
+		"name": "UMass Outing Club (UMOC)",
+		"institution": "University of Massachusetts Amherst",
+		"city": "Amherst",
+		"country": "US",
+		"subdivision": "Massachusetts",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/umassoutingclub"
+	},
+	{
+		"name": "Vassar Outing Club",
+		"institution": "Vassar College",
+		"city": "Poughkeepsie",
+		"country": "US",
+		"subdivision": "New York",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/vassaroutingclub",
+		"facebook": "https://www.facebook.com/VassarOutingClub",
+		"email": "outingclub.vsa@vassar.edu"
+	},
+	{
+		"name": "Williams Outing Club (WOC)",
+		"institution": "Williams College",
+		"city": "Williamstown",
+		"country": "US",
+		"subdivision": "Massachusetts",
+		"region": "Northeast",
+		"website": "https://woc.williams.edu",
+		"instagram": "https://www.instagram.com/wocstagram",
+		"facebook": "https://www.facebook.com/williamsoutingclub",
+		"email": "woc@williams.edu"
+	},
+	{
+		"name": "Worcester State Outdoors Club",
+		"institution": "Worcester State University",
+		"city": "Worcester",
+		"country": "US",
+		"subdivision": "Massachusetts",
+		"region": "Northeast",
+		"instagram": "https://www.instagram.com/wsu_outdoors",
+		"email": "outdoorsclub@worcester.edu"
+	}
+]

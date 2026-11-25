@@ -1,0 +1,52 @@
+[
+	{
+		"region": "Atlantic",
+		"contact": "John Doe",
+		"email": "atlantic@ioca.org"
+	},
+	{
+		"region": "British Columbia",
+		"contact": "John Doe",
+		"email": "bc@ioca.org"
+	},
+	{
+		"region": "Midwest",
+		"contact": "John Doe",
+		"email": "midwest@ioca.org"
+	},
+	{
+		"region": "Northeast",
+		"contact": "John Doe",
+		"email": "northeast@ioca.org"
+	},
+	{
+		"region": "Ontario",
+		"contact": "John Doe",
+		"email": "ontario@ioca.org"
+	},
+	{
+		"region": "Prairies",
+		"contact": "John Doe",
+		"email": "prairies@ioca.org"
+	},
+	{
+		"region": "Quebec",
+		"contact": "John Doe",
+		"email": "quebec@ioca.org"
+	},
+	{
+		"region": "South",
+		"contact": "John Doe",
+		"email": "south@ioca.org"
+	},
+	{
+		"region": "Territories",
+		"contact": "John Doe",
+		"email": "territories@ioca.org"
+	},
+	{
+		"region": "West",
+		"contact": "John Doe",
+		"email": "west@ioca.org"
+	}
+]
